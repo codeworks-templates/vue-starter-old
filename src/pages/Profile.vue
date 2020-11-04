@@ -7,13 +7,14 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { AppState } from '../AppState'
 export default {
   name: 'Profile',
-  computed: {
-    profile() {
-      return this.$store.state.profile
+  setup() {
+    return {
+      profile: computed(() => AppState.profile)
     }
-  }
 }
 </script>
 
