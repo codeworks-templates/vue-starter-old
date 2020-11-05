@@ -3,7 +3,7 @@ import { AppState } from '../AppState'
 import { audience, clientId, domain } from '../AuthConfig'
 import router from '../router'
 import { setBearer } from './AxiosService'
-import { profileService } from './ProfileService'
+
 
 export const AuthService = Auth0Provider.initialize({
   domain,
