@@ -15,6 +15,7 @@ export default {
     return {
       profile: computed(() => AppState.profile)
     }
+  }
 }
 </script>
 
