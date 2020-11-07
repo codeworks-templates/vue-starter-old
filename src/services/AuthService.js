@@ -4,7 +4,6 @@ import { audience, clientId, domain } from '../AuthConfig'
 import router from '../router'
 import { setBearer } from './AxiosService'
 
-
 export const AuthService = initialize({
   domain,
   clientId,
@@ -22,5 +21,4 @@ AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, async function() {
   setBearer(AuthService.bearer)
   AppState.user = AuthService.user
   // NOTE if there is something you want to do once the user is authenticated, place that here
- 
 })

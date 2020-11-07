@@ -3,13 +3,10 @@
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <img
-          alt="Vue logo"
-          src="../assets/logo.png"
-          width="25"
+          alt="logo"
+          src="../assets/img/cw-logo.png"
+          height="45"
         />
-      </div>
-      <div class="text-light text-shadow">
-        <h3>ue Template</h3>
       </div>
     </router-link>
     <button
@@ -30,10 +27,15 @@
             Home
           </router-link>
         </li>
+        <li class="nav-item">
+          <router-link :to="{ name: 'About' }" class="nav-link">
+            About
+          </router-link>
+        </li>
       </ul>
       <span class="navbar-text">
         <button
-          class="btn btn-success"
+          class="btn btn-outline-primary text-uppercase"
           @click="login"
           v-if="!user.isAuthenticated"
         >
@@ -42,7 +44,7 @@
 
         <div class="dropdown" v-else>
           <div
-            class="btn btn-light dropdown-toggle"
+            class="dropdown-toggle"
             @click="state.dropOpen = !state.dropOpen"
           >
             <img
@@ -115,5 +117,11 @@ export default {
 }
 a:hover {
   text-decoration: none;
+}
+.nav-link{
+  text-transform: uppercase;
+}
+.nav-item .nav-link.router-link-exact-active{
+  color: var(--primary);
 }
 </style>

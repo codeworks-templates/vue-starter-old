@@ -1,7 +1,9 @@
 import Axios from 'axios'
+
+const baseURL = window.location.origin.includes('localhost') ? '' : ''
 export const api = Axios.create({
-  baseURL: '',
-  timeout: 3000
+  baseURL,
+  timeout: 8000
 })
 
 // NOTE remember to add the auth headers to any axios instance you need auth on.

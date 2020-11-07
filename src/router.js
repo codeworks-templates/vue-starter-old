@@ -1,20 +1,25 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-// @ts-ignore
-import Home from '../pages/Home.vue'
-// @ts-ignore
-import Profile from '../pages/Profile.vue'
 import { authGuard } from '@bcwdev/auth0provider-client'
+
+function loadPage(page) {
+  return () => import(`./pages/${page}.vue`)
+}
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: loadPage('HomePage')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: loadPage('AboutPage')
   },
   {
     path: '/profile',
     name: 'Profile',
-    component: Profile,
+    component: loadPage('ProfilePage'),
     beforeEnter: authGuard
   }
 ]

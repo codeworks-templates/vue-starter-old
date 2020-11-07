@@ -1,12 +1,22 @@
 <template>
-  <div id="app">
-    <navbar />
-    <router-view />
-  </div>
+  <header>
+    <Navbar />
+  </header>
+  <main>
+    <router-view v-slot="{Component}">
+      <transition name="route" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </main>
+  <footer>
+    <div class="bg-dark text-light text-center p-4">
+      Made with 💖 by CodeWorks
+    </div>
+  </footer>
 </template>
 
 <script>
-import Navbar from '@/components/navbar'
 import { computed } from 'vue'
 import { AppState } from './AppState'
 export default {
@@ -15,14 +25,10 @@ export default {
     return {
       appState: computed(() => AppState)
     }
-  },
-  components: {
-    Navbar
   }
 }
 </script>
 <style lang="scss">
-@import "./assets/_variables.scss";
-@import "bootstrap";
-@import "./assets/_overrides.scss";
+@import "./assets/scss/main.scss";
+
 </style>
