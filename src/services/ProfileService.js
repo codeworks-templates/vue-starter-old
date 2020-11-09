@@ -1,4 +1,5 @@
 import { AppState } from '../AppState'
+import { logger } from '../utils/Logger'
 import { api } from './AxiosService'
 
 class ProfileService {
@@ -6,11 +7,8 @@ class ProfileService {
     try {
       const res = await api.get('/profile')
       AppState.profile = res.data
-      // eslint-disable-next-line no-console
-      console.log(res.data)
     } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error(err)
+      logger.error('HAVE YOU STARTED YOUR SERVER YET???', err)
     }
   }
 }

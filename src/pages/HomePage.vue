@@ -1,7 +1,9 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <img src="../assets/img/cw-circle.png" alt="CodeWorks Logo">
-    <h1>Welcome {{ name }}</h1>
+    <img src="https://bcw.blob.core.windows.net/public/img/8600856373152463" alt="CodeWorks Logo">
+    <h1 class="my-5 bg-dark text-light p-3 rounded d-flex align-items-center">
+      <span class="mx-2 text-white">Vue 3 Starter</span>
+    </h1>
   </div>
 </template>
 
@@ -14,9 +16,10 @@ export default {
 <style scoped lang="scss">
 .home{
   text-align: center;
-  img{
-    height: 250px;
-    width: 250px;
+  user-select: none;
+  > img{
+    height: 200px;
+    width: 200px;
   }
 }
 </style>
