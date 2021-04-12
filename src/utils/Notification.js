@@ -1,5 +1,7 @@
 import Swal from 'sweetalert2'
+options = ['a', 'b', 'c']
 
+Notification.toast('what')
 export default class Notification {
   static async confirmAction(title = 'Are you sure?', text = "You won't be able to revert this!") {
     try {
@@ -20,13 +22,21 @@ export default class Notification {
     }
   }
 
-  static toast(title = 'Warning!', display = 'warning') {
+  /**
+ *
+ * @param {*} title
+ * @param {*} display
+ * @param {string} options[] position
+ * @param {*} timer
+ * @param {*} progressBar
+ */
+  static toast(title = 'Warning!', display = 'warning', position = 'top-right', timer = 3000, progressBar = true) {
     Swal.fire({
       title: title,
       icon: display,
-      position: 'top-right',
-      timer: 3000,
-      timerProgressBar: true,
+      position: position,
+      timer: timer,
+      timerProgressBar: progressBar,
       toast: true,
       showConfirmButton: false
     })
