@@ -3,16 +3,25 @@ options = ['a', 'b', 'c']
 
 Notification.toast('what')
 export default class Notification {
-  static async confirmAction(title = 'Are you sure?', text = "You won't be able to revert this!") {
+  /**
+ *
+ * @param {string} title The title text.
+ * @param {string} text The body text.
+ * @param {string} icon 'success', 'error', 'info', 'warning', or 'question'.
+ * @param {string} confirmButtonText The text of your confirm button.
+ * -----------------------------------
+ * {@link https://sweetalert2.github.io/#configuration|Check out Sweet Alerts}
+ */
+  static async confirmAction(title = 'Are you sure?', text = "You won't be able to revert this!", icon = 'warning', confirmButtonText = 'Yes, delete it!') {
     try {
       const res = await Swal.fire({
         title: title,
         text: text,
-        icon: 'warning',
+        icon: icon,
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: confirmButtonText
       })
       if (res.isConfirmed) {
         return true
@@ -24,13 +33,15 @@ export default class Notification {
 
   /**
  *
- * @param {*} title
- * @param {*} display
- * @param {string} options[] position
- * @param {*} timer
- * @param {*} progressBar
+ * @param {string} title The title text
+ * @param {string} display 'success', 'error', 'info', 'warning', or 'question'.
+ * @param {string} position 'top', 'top-start', 'top-end', 'center', 'center-start', 'center-end', 'bottom', 'bottom-start', or 'bottom-end'.
+ * @param {number} timer Time in milliseconds.
+ * @param {boolean} progressBar Show progress bar or not respectively.
+ * -----------------------------------
+ * {@link https://sweetalert2.github.io/#configuration|Check out Sweet Alerts}
  */
-  static toast(title = 'Warning!', display = 'warning', position = 'top-right', timer = 3000, progressBar = true) {
+  static toast(title = 'Warning!', display = 'warning', position = 'top-end', timer = 3000, progressBar = true) {
     Swal.fire({
       title: title,
       icon: display,
