@@ -1,7 +1,5 @@
 import Swal from 'sweetalert2'
-options = ['a', 'b', 'c']
 
-Notification.toast('what')
 export default class Notification {
   /**
  *
