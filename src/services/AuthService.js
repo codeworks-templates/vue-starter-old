@@ -1,9 +1,9 @@
 import { initialize } from '@bcwdev/auth0provider-client'
 import { AppState } from '../AppState'
-import { audience, clientId, domain } from '../AuthConfig'
+import { audience, clientId, domain } from '../env'
 import router from '../router'
-import { setBearer } from './AxiosService'
 import { accountService } from './AccountService'
+import { setBearer } from './AxiosService'
 
 export const AuthService = initialize({
   domain,
