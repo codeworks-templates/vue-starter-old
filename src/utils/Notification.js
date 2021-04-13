@@ -52,6 +52,4 @@ export default class Notification {
       showConfirmButton: false
     })
   }
-
-  // TODO Prompt
 }
