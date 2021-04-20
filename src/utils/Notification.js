@@ -26,6 +26,7 @@ export default class Notification {
       }
       return false
     } catch (error) {
+      return false
     }
   }
 

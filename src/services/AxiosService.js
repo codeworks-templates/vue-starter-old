@@ -1,6 +1,5 @@
 import Axios from 'axios'
-
-export const baseURL = window.location.origin.includes('localhost') ? 'http://localhost:3000' : ''
+import { baseURL } from '../env'
 export const api = Axios.create({
   baseURL,
   timeout: 8000
