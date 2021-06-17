@@ -1,3 +1,7 @@
+import '@mdi/font/css/materialdesignicons.css'
+import 'jquery'
+import 'popper.js'
+import 'bootstrap'
 // @ts-ignore
 import App from './App.vue'
 import { createApp } from 'vue'
